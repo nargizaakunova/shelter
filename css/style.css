@@ -6,6 +6,7 @@
 
 :root {
   --color-primary: #f1cdb3;
+  --color-primary-light: #fddcc4;
   --color-light-s: #fafafa;
   --color-light-l: #f6f6f6;
   --color-light-xl: #ffffff;
@@ -180,7 +181,11 @@ header .container {
   border-radius: 100px;
   text-decoration: none;
 }
-
+.home-main-section .call-to-action .btn:hover {
+  background-color: #fddcc4;
+  transition: 0.4s;
+  cursor: pointer;
+}
 .home-main-section .dog-image {
   background-image: url(../assets/start-screen-puppy.png);
   width: 698px;
@@ -278,6 +283,13 @@ header .container {
   background-color: var(--color-light-l);
 }
 
+.our-friends .slide-wrapper .arrow-left-btn:hover,
+.our-friends .slide-wrapper .arrow-right-btn:hover {
+  background-color: var(--color-primary-light);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .our-friends .slide-wrapper .slider {
   display: flex;
   flex-direction: row;
@@ -311,6 +323,12 @@ header .container {
   border-radius: 100px;
   border: 2px solid #f1cdb3;
   margin-bottom: 30px;
+  background-color: var(--color-light-s);
+}
+.our-friends .learn-more-btn:hover {
+  background-color: var(--color-primary-light);
+  cursor: pointer;
+  transition: 0.3s;
 }
 .our-friends .get-to-know-btn {
   font-family: var(--primary-font);
@@ -326,4 +344,9 @@ header .container {
   margin: 0 auto;
   margin-bottom: 100px;
   color: var(--color-dark-3xl);
+}
+.our-friends .get-to-know-btn:hover {
+  background-color: var(--color-primary-light);
+  cursor: pointer;
+  transition: 0.3s;
 }
