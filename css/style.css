@@ -7,11 +7,12 @@
 :root {
   --color-primary: #f1cdb3;
   --color-light-s: #fafafa;
+  --color-light-l: #f6f6f6;
   --color-light-xl: #ffffff;
   --color-dark-s: #cdcdcd;
-  --color-dark-3xl: #292929;
   --color-dark-l: #545454;
   --color-dark-xl: #4c4c4c;
+  --color-dark-3xl: #292929;
   --primary-font: "Georgia", sans-serif;
   --secondary-font: "Arial", sans-serif;
 }
@@ -27,10 +28,22 @@ body {
   margin: 0 auto;
 }
 
+.section-subheading {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin-top: 0;
+}
+
 /* Header */
 header {
   margin-top: 60px;
 }
+
 header .container {
   display: flex;
   justify-content: space-between;
@@ -104,8 +117,10 @@ header .container {
 .main-nav li {
   margin-right: 35px;
 }
+/* End of Header */
 
 /* Main */
+/* Header Page */
 .background-img {
   position: absolute;
   background: url(../assets/noise_transparent.png),
@@ -140,6 +155,7 @@ header .container {
   margin-bottom: 42px;
   max-width: 310px;
 }
+
 .home-main-section .call-to-action .subtitle {
   font-family: var(--secondary-font);
   font-style: normal;
@@ -171,7 +187,9 @@ header .container {
   height: 728px;
   margin-top: 60px;
 }
+/* End of Header Page */
 
+/* About the Shelter Section */
 .about-shelter .container {
   display: flex;
   flex-wrap: wrap;
@@ -195,15 +213,7 @@ header .container {
   margin-top: 14px;
 }
 
-.about-shelter-description .section-subheading {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: var(--color-dark-l);
-  margin-top: 0;
+.about-shelter-description .about-subheading {
   margin-bottom: 25px;
   max-width: 370px;
 }
@@ -221,4 +231,98 @@ header .container {
 }
 .about-shelter-description .paragraph-description:last-child {
   margin-bottom: 0;
+}
+/* End of About the shelter Section */
+
+/* Our Friends Looking For a House Section */
+.our-friends {
+  background-color: var(--color-light-l);
+}
+.our-friends .container {
+  display: flex;
+  flex-direction: column;
+  /* max-width: 1200px; */
+}
+
+.our-friends .our-friends-subheading {
+  max-width: 400px;
+  margin: 80px auto 60px;
+}
+
+.our-friends .slider .slider-card {
+  max-width: 270px;
+  background-color: var(--color-light-s);
+  margin-bottom: 60px;
+  margin-right: 90px;
+  text-align: center;
+}
+.our-friends .slider .slider-card:last-child {
+  margin-right: 0;
+}
+.our-friends .slide-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.our-friends .slide-wrapper .arrow-left-btn,
+.our-friends .slide-wrapper .arrow-right-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  border: 2px solid #f1cdb3;
+  box-sizing: border-box;
+  margin-bottom: 62px;
+  background-color: var(--color-light-l);
+}
+
+.our-friends .slide-wrapper .slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.our-friends .pet-image {
+  margin-bottom: 25px;
+}
+
+.our-friends .pet-name {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.our-friends .learn-more-btn {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+  padding: 13px 43px;
+  border-radius: 100px;
+  border: 2px solid #f1cdb3;
+  margin-bottom: 30px;
+}
+.our-friends .get-to-know-btn {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  background: var(--color-primary);
+  border-radius: 100px;
+  border: none;
+  width: 261px;
+  height: 52px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  color: var(--color-dark-3xl);
 }
