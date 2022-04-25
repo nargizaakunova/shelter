@@ -105,12 +105,14 @@ header .container {
   color: var(--color-light-s);
 }
 
-.main-nav a {
+.main-nav a:link,
+.main-nav a:visited {
   text-decoration: none;
   color: var(--color-dark-s);
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a:active {
   color: var(--color-primary);
 }
 
@@ -340,6 +342,11 @@ header .container {
   margin-bottom: 100px;
   color: var(--color-dark-3xl);
 }
+.our-friends .get-to-know-btn a:link,
+.our-friends .get-to-know-btn a:visited {
+  text-decoration: none;
+  color: var(--color-dark-3xl);
+}
 .our-friends .get-to-know-btn:hover {
   background-color: var(--color-primary-light);
   cursor: pointer;
@@ -422,16 +429,36 @@ header .container {
   margin-bottom: 20px;
   margin-top: 0;
 }
+/* .donation .donation-data .clickable-card-number:link,
+.donation .donation-data .clickable-card-number:visited {
+  text-decoration: none;
+  background-color: var(--color-primary);
+}
+.donation .donation-data .clickable-card-number:hover,
+.donation .donation-data .clickable-card-number:active {
+  text-decoration: none;
+  background-color: var(--color-primary-light);
+} */
 
-.donation .donation-data .card-number-wrapper {
-  display: flex;
-  gap: 14px;
+.donation .donation-data .card-number-btn {
   padding: 10px 15px;
   border-radius: 9px;
   background-color: var(--color-primary);
   margin-bottom: 20px;
   max-width: 349px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
+.donation .donation-data .card-number-btn:hover {
+  background-color: var(--color-primary-light);
+}
+.donation .donation-data .card-number-wrapper {
+  display: flex;
+  gap: 14px;
+}
+
 .donation .card-number-wrapper .card-number {
   font-family: var(--primary-font);
   font-style: normal;
@@ -451,5 +478,8 @@ header .container {
   line-height: 18px;
   color: var(--color-dark-m);
   max-width: 380px;
+  margin-top: 0;
 }
 /* End of Section You can also make a donation */
+/* Footer */
+/* End of Footer */
