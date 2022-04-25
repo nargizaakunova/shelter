@@ -11,6 +11,7 @@
   --color-light-l: #f6f6f6;
   --color-light-xl: #ffffff;
   --color-dark-s: #cdcdcd;
+  --color-dark-m: #b2b2b2;
   --color-dark-l: #545454;
   --color-dark-xl: #4c4c4c;
   --color-dark-3xl: #292929;
@@ -391,3 +392,64 @@ header .container {
 }
 
 /* End of Section How you can help our shelter */
+/* Section You can also make a donation */
+.donation {
+  background-color: var(--color-light-l);
+}
+.donation .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 143px;
+  margin-right: 142px;
+  gap: 30px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.donation .donation-data .donation-subheading {
+  margin-bottom: 20px;
+}
+
+.donation .donation-data .bank-description {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.donation .donation-data .card-number-wrapper {
+  display: flex;
+  gap: 14px;
+  padding: 10px 15px;
+  border-radius: 9px;
+  background-color: var(--color-primary);
+  margin-bottom: 20px;
+  max-width: 349px;
+}
+.donation .card-number-wrapper .card-number {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin: 0;
+}
+
+.donation .donation-data .donation-description {
+  font-family: var(--secondary-font);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-dark-m);
+  max-width: 380px;
+}
+/* End of Section You can also make a donation */
