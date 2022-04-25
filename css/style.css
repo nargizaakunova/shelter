@@ -202,11 +202,13 @@ header .container {
   justify-content: space-around;
   align-items: center;
   margin-top: 80px;
+  gap: 120px;
 }
 
 .about-shelter .about-shelter-pets-img {
   width: 300px;
-  margin: 0 120px 100px 175px;
+  margin-bottom: 100px;
+  margin-left: 175px;
 }
 
 .about-shelter-description {
@@ -246,7 +248,6 @@ header .container {
 .our-friends .container {
   display: flex;
   flex-direction: column;
-  /* max-width: 1200px; */
 }
 
 .our-friends .our-friends-subheading {
@@ -255,21 +256,25 @@ header .container {
   text-align: center;
 }
 
-.our-friends .slider .slider-card {
-  max-width: 270px;
-  background-color: var(--color-light-s);
-  margin-bottom: 60px;
-  margin-right: 90px;
-  text-align: center;
-}
-.our-friends .slider .slider-card:last-child {
-  margin-right: 0;
-}
 .our-friends .slide-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.our-friends .slide-wrapper .slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 90px;
+}
+
+.our-friends .slider .slider-card {
+  max-width: 270px;
+  background-color: var(--color-light-s);
+  margin-bottom: 60px;
+  text-align: center;
 }
 
 .our-friends .slide-wrapper .arrow-left-btn,
@@ -288,12 +293,6 @@ header .container {
   background-color: var(--color-primary-light);
   cursor: pointer;
   transition: 0.3s;
-}
-
-.our-friends .slide-wrapper .slider {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 .our-friends .pet-image {
@@ -350,3 +349,7 @@ header .container {
   cursor: pointer;
   transition: 0.3s;
 }
+/* End of Our Friends Looking For a House Section */
+
+/* Section How you can help our shelter */
+/* End of Section How you can help our shelter */
