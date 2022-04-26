@@ -405,13 +405,14 @@ header .container {
 }
 .donation .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-left: 143px;
-  margin-right: 142px;
   gap: 30px;
   padding-top: 80px;
   padding-bottom: 100px;
+  max-width: 915px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .donation .donation-data .donation-subheading {
