@@ -520,9 +520,9 @@ footer .container .address {
   margin-top: 56px;
   width: 302px;
 }
-footer .container .footer-dog-image {
+footer .container .footer-dog-image img {
   margin-top: 40px;
-  display: flex;
+  display: block;
 }
 
 footer .section-subheading {
