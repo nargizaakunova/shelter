@@ -122,7 +122,7 @@ header .container {
 /* Header Page */
 .background-img {
   position: absolute;
-  background: url(../assets/noise_transparent.png),
+  background: url(../../assets/images/noise_transparent.png),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
   width: 100%;
   height: 908px;
@@ -185,7 +185,7 @@ header .container {
   cursor: pointer;
 }
 .home-main-section .dog-image {
-  background-image: url(../assets/start-screen-puppy.png);
+  background-image: url(../../assets/images/start-screen-puppy.png);
   width: 698px;
   height: 728px;
   margin-top: 60px;
@@ -484,7 +484,7 @@ header .container {
 /* End of Section You can also make a donation */
 /* Footer */
 .footer {
-  background: url(../assets/noise_transparent.png),
+  background: url(../../assets/images/noise_transparent.png),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 }
 .footer .container {
