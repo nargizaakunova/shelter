@@ -228,6 +228,7 @@ header .container {
 .pagination .next:hover,
 .pagination .to-end:hover {
   background-color: var(--color-primary-light);
+  border: none;
 }
 
 /* End of Our Friends Looking For a House Section */
