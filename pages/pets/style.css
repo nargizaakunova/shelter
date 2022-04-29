@@ -141,6 +141,15 @@ header .container {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .slide-wrapper .slider {
+    grid-template-columns: repeat(2, 1fr);
+    width: 580px;
+  }
+  footer {
+  }
+}
+
 .our-friends {
   background-color: var(--color-light-l);
 }
@@ -240,23 +249,25 @@ header .container {
 }
 .footer .container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  column-gap: 160px;
   padding-top: 40px;
+  width: 1200px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 footer .container .contacts {
-  max-width: 279px;
+  width: 279px;
   margin-top: 16px;
 }
 footer .footer-subheading-1 {
-  margin-bottom: 44px;
+  margin-bottom: 47px;
 }
 footer .footer-subheading-2 {
   margin-bottom: 35px;
 }
 .contact-wrapper {
-  margin-bottom: 48px;
+  margin-bottom: 46px;
 }
 .contact-wrapper:last-child {
   margin-bottom: 0;
@@ -305,9 +316,13 @@ footer a:active {
   gap: 20px;
   margin-top: 0;
 }
-.contact-wrapper img {
+.contact-1 img {
   position: relative;
-  top: -5px;
+  top: -3px;
+}
+.contact-2 img {
+  position: relative;
+  top: -6px;
 }
 .office-location-1 img {
   align-self: center;
