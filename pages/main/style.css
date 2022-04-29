@@ -264,14 +264,13 @@ header .container {
 .our-friends .slide-wrapper .slider {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   gap: 90px;
+  margin-bottom: 60px;
 }
 
 .our-friends .slider .slider-card {
   max-width: 270px;
   background-color: var(--color-light-s);
-  margin-bottom: 60px;
   text-align: center;
 }
 
