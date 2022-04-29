@@ -270,6 +270,7 @@ header .container {
   flex-direction: row;
   gap: 90px;
   margin-bottom: 60px;
+  cursor: pointer;
 }
 
 .our-friends .slider .slider-card {

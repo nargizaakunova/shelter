@@ -138,6 +138,7 @@ header .container {
   column-gap: 40px;
   row-gap: 30px;
   margin-bottom: 60px;
+  cursor: pointer;
 }
 
 .our-friends {
