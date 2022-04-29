@@ -39,6 +39,29 @@ body {
   letter-spacing: 0.06em;
   color: var(--color-dark-l);
   margin-top: 0;
+  text-align: center;
+}
+
+.btn {
+  color: var(--color-dark-3xl);
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  display: inline-block;
+  letter-spacing: 0.06em;
+  padding: 15px 45px;
+  background: #f1cdb3;
+  border-radius: 100px;
+  text-decoration: none;
+  border-style: none;
+}
+
+.btn:hover {
+  background-color: #fddcc4;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 /* Header */
@@ -165,25 +188,7 @@ header .container {
   margin-top: 0px;
   margin-bottom: 42px;
 }
-.home-main-section .call-to-action .btn {
-  color: var(--color-dark-3xl);
-  font-family: var(--primary-font);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 130%;
-  display: inline-block;
-  letter-spacing: 0.06em;
-  padding: 15px 45px;
-  background: #f1cdb3;
-  border-radius: 100px;
-  text-decoration: none;
-}
-.home-main-section .call-to-action .btn:hover {
-  background-color: #fddcc4;
-  transition: 0.4s;
-  cursor: pointer;
-}
+
 .home-main-section .dog-image {
   background-image: url(../../assets/images/start-screen-puppy.png);
   width: 698px;
@@ -327,30 +332,11 @@ header .container {
   transition: 0.3s;
 }
 .our-friends .get-to-know-btn {
-  font-family: var(--primary-font);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 130%;
-  background: var(--color-primary);
-  border-radius: 100px;
-  border: none;
-  width: 261px;
-  height: 52px;
+  width: 271px;
   margin: 0 auto;
   margin-bottom: 100px;
-  color: var(--color-dark-3xl);
 }
-.our-friends .get-to-know-btn a:link,
-.our-friends .get-to-know-btn a:visited {
-  text-decoration: none;
-  color: var(--color-dark-3xl);
-}
-.our-friends .get-to-know-btn:hover {
-  background-color: var(--color-primary-light);
-  cursor: pointer;
-  transition: 0.3s;
-}
+
 /* End of Our Friends Looking For a House Section */
 
 /* Section How you can help our shelter */
@@ -359,9 +345,10 @@ header .container {
 }
 
 .how-to-help .how-to-help-subheading {
-  text-align: center;
+  margin: 0 auto;
   margin-top: 80px;
   margin-bottom: 60px;
+  width: 310px;
 }
 
 .how-to-help .help-wrapper {
@@ -369,16 +356,15 @@ header .container {
   margin-left: 87px;
   margin-right: 87px;
   margin-bottom: 100px;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  align-content: center;
   flex-wrap: wrap;
-  gap: 56px 118px;
+  gap: 52px 119px;
   text-align: center;
 }
 
 .how-to-help .help-wrapper .vitamins {
-  margin-left: 68px;
+  margin-left: 84px;
 }
 
 .how-to-help .help-wrapper .sleeping-areas {
