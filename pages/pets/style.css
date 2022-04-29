@@ -1,0 +1,317 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f1cdb3;
+  --color-primary-light: #fddcc4;
+  --color-light-s: #fafafa;
+  --color-light-l: #f6f6f6;
+  --color-light-xl: #ffffff;
+  --color-dark-s: #cdcdcd;
+  --color-dark-m: #b2b2b2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4c4c4c;
+  --color-dark-3xl: #292929;
+  --primary-font: "Georgia", sans-serif;
+  --secondary-font: "Arial", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.section-subheading {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin-top: 0;
+}
+
+.btn-page-styler {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--color-light-xl);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.logo .logo-title {
+  color: var(--color-dark-l);
+  font-size: 32px;
+  font-family: var(--primary-font);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-top: 0;
+  margin-bottom: 0px;
+  line-height: 110%;
+}
+
+.logo .logo-subtitle {
+  font-family: var(--secondary-font);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--color-dark-3xl);
+  position: relative;
+  left: 1px;
+}
+
+.main-nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-size: 15px;
+  gap: 35px;
+}
+
+.main-nav a:link,
+.main-nav a:visited {
+  text-decoration: none;
+  color: var(--color-dark-l);
+}
+
+.main-nav a:hover,
+.main-nav a:active {
+  color: var(--color-primary);
+}
+
+.main-nav a.active-link {
+  color: var(--color-dark-3xl);
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: 4px;
+}
+.main-nav a.active-link:hover {
+  color: var(--color-primary);
+}
+
+/* End of Header */
+
+/* Main */
+/* Our Friends Looking For a House Section */
+
+.slide-wrapper .slider {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 1200px;
+  column-gap: 40px;
+  row-gap: 30px;
+  margin-bottom: 60px;
+}
+
+.our-friends {
+  background-color: var(--color-light-l);
+}
+.our-friends .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.our-friends .our-friends-subheading {
+  max-width: 400px;
+  margin: 80px auto 60px;
+  text-align: center;
+}
+
+.our-friends .slider .slider-card {
+  max-width: 270px;
+  background-color: var(--color-light-s);
+  text-align: center;
+}
+
+.our-friends .pet-image {
+  margin-bottom: 25px;
+}
+
+.our-friends .pet-name {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.our-friends .learn-more-btn {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+  padding: 13px 43px;
+  border-radius: 100px;
+  border: 2px solid #f1cdb3;
+  margin-bottom: 30px;
+  background-color: var(--color-light-s);
+}
+.our-friends .learn-more-btn:hover {
+  background-color: var(--color-primary-light);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Pagination */
+.pagination {
+  margin-bottom: 100px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.pagination .btn-page {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+}
+.pagination .to-start,
+.pagination .back {
+  border: 2px solid #cdcdcd;
+  color: var(--color-dark-s);
+  background-color: transparent;
+}
+.pagination .current {
+  border: none;
+  color: var(--color-dark-3xl);
+  background-color: var(--color-primary);
+}
+.pagination .next,
+.pagination .to-end {
+  border: 2px solid #f1cdb3;
+  color: var(--color-dark-3xl);
+  background-color: transparent;
+  cursor: pointer;
+}
+.pagination .next:hover,
+.pagination .to-end:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* End of Our Friends Looking For a House Section */
+/* Footer */
+.footer {
+  background: url(../../assets/images/noise_transparent.png),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+}
+.footer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+footer .container .contacts {
+  max-width: 279px;
+  margin-top: 16px;
+}
+footer .footer-subheading-1 {
+  margin-bottom: 44px;
+}
+footer .footer-subheading-2 {
+  margin-bottom: 35px;
+}
+.contact-wrapper {
+  margin-bottom: 48px;
+}
+.contact-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.address-wrapper {
+  margin-bottom: 37px;
+}
+.address-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+footer .container .address {
+  width: 302px;
+  margin-top: 16px;
+}
+footer .container .footer-dog-image img {
+  display: block;
+}
+
+footer .section-subheading {
+  color: var(--color-light-xl);
+}
+footer a:link,
+footer a:visited {
+  color: var(--color-primary);
+}
+footer a:hover,
+footer a:active {
+  color: var(--color-light-xl);
+}
+
+footer a:link,
+footer a:visited,
+footer a:hover,
+footer a:active {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  display: flex;
+  align-content: center;
+  gap: 20px;
+  margin-top: 0;
+}
+.contact-wrapper img {
+  position: relative;
+  top: -5px;
+}
+.office-location-1 img {
+  align-self: center;
+}
+.office-location-2 img {
+  position: relative;
+  top: -4px;
+}
+/* End of Footer */

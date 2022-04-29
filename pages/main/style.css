@@ -341,11 +341,11 @@ header .container {
 /* Section How you can help our shelter */
 .how-to-help {
   background-color: var(--color-light-xl);
+  padding-top: 80px;
 }
 
 .how-to-help .how-to-help-subheading {
   margin: 0 auto;
-  margin-top: 80px;
   margin-bottom: 60px;
   width: 310px;
   text-align: center;
@@ -475,6 +475,7 @@ header .container {
 }
 .footer .container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding-top: 40px;
 }
