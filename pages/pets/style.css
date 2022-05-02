@@ -251,6 +251,9 @@ header .container {
   text-align: center;
   cursor: pointer;
 }
+.our-friends .slider .slider-card:hover {
+  background-color: var(--color-light-xl);
+}
 
 .our-friends .pet-image {
   margin-bottom: 25px;
