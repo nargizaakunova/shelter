@@ -227,7 +227,6 @@ header .container {
   column-gap: 40px;
   row-gap: 30px;
   margin-bottom: 60px;
-  cursor: pointer;
 }
 
 .our-friends {
@@ -250,6 +249,7 @@ header .container {
   width: 100%;
   background-color: var(--color-light-s);
   text-align: center;
+  cursor: pointer;
 }
 
 .our-friends .pet-image {

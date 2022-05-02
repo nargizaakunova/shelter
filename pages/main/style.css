@@ -271,13 +271,13 @@ header .container {
   flex-direction: row;
   gap: 90px;
   margin-bottom: 60px;
-  cursor: pointer;
 }
 
 .our-friends .slider .slider-card {
   max-width: 270px;
   background-color: var(--color-light-s);
   text-align: center;
+  cursor: pointer;
 }
 
 .our-friends .slide-wrapper .arrow-left-btn,
