@@ -320,8 +320,9 @@ header .container {
 /* End of Our Friends Looking For a House Section */
 /* Footer */
 .footer {
-  background: url(../../assets/images/noise_transparent.png),
-    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+  background-image: url(../../assets/images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .footer .container {
   display: grid;
