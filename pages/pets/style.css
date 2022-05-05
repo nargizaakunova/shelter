@@ -353,7 +353,7 @@ header .container {
 }
 
 footer .container .contacts {
-  margin-top: 16px;
+  margin-top: 17px;
 }
 
 footer .footer-subheading-1 {
@@ -361,11 +361,12 @@ footer .footer-subheading-1 {
 }
 
 footer .footer-subheading-2 {
-  margin-bottom: 32px;
+  margin-bottom: 31px;
 }
 
 .contact-wrapper {
-  margin-bottom: 46px;
+  margin-bottom: 47px;
+  margin-top: -1px;
 }
 
 .contact-wrapper:last-child {
@@ -373,7 +374,7 @@ footer .footer-subheading-2 {
 }
 
 .address-wrapper {
-  margin-bottom: 37px;
+  margin-bottom: 38px;
 }
 
 .address-wrapper:last-child {
@@ -381,7 +382,7 @@ footer .footer-subheading-2 {
 }
 
 footer .container .address {
-  margin-top: 16px;
+  margin-top: 17px;
   margin-left: -11px;
 }
 
@@ -422,21 +423,24 @@ footer a:active {
 
 .contact-1 img {
   position: relative;
-  top: -3px;
+  top: -2px;
 }
 
 .contact-2 img {
   position: relative;
-  top: -6px;
+  top: -5px;
 }
 
 .office-location-1 img {
   align-self: center;
+  position: relative;
+  left: -1px;
 }
 
 .office-location-2 img {
   position: relative;
-  top: -4px;
+  top: -5px;
+  left: -1px;
 }
 /* End of Footer */
 
