@@ -84,6 +84,8 @@ header .container {
   margin-top: 0;
   margin-bottom: 0px;
   line-height: 110%;
+  position: relative;
+  bottom: -1px;
 }
 
 .logo .logo-subtitle {
@@ -93,18 +95,19 @@ header .container {
   line-height: 15px;
   letter-spacing: 0.1em;
   color: var(--color-dark-3xl);
-  margin-left: 3px;
+  margin-left: 4px;
 }
 
 .main-nav ul {
   display: flex;
   margin: 0;
+  margin-top: -4px;
   padding: 0;
   list-style: none;
   font-family: var(--secondary-font);
   font-weight: 400;
   font-size: 15px;
-  gap: 35px;
+  gap: 36px;
 }
 
 .main-nav a:link,
@@ -354,11 +357,11 @@ footer .container .contacts {
 }
 
 footer .footer-subheading-1 {
-  margin-bottom: 47px;
+  margin-bottom: 44px;
 }
 
 footer .footer-subheading-2 {
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 }
 
 .contact-wrapper {
@@ -379,6 +382,7 @@ footer .footer-subheading-2 {
 
 footer .container .address {
   margin-top: 16px;
+  margin-left: -11px;
 }
 
 footer .container .footer-dog-image img {
