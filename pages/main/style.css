@@ -337,12 +337,12 @@ header .container {
   border: 2px solid #f1cdb3;
   margin-bottom: 30px;
   background-color: var(--color-light-s);
+  transition: 0.3s;
 }
 
-.our-friends .learn-more-btn:hover {
+.our-friends .slider-card:hover .learn-more-btn {
   background-color: var(--color-primary-light);
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .our-friends .get-to-know-btn {
