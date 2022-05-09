@@ -246,6 +246,8 @@ header .container {
   max-width: 400px;
   margin: 80px auto 60px;
   text-align: center;
+  position: relative;
+  left: 2px;
 }
 
 .our-friends .slider .slider-card {
