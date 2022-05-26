@@ -30,6 +30,12 @@ body {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
 .section-subheading {
   font-family: "Georgia";
   font-style: normal;
@@ -129,6 +135,12 @@ header .container {
 
 .main-nav a.active-link:hover {
   color: var(--color-primary);
+}
+
+@media screen and (max-width: 768px) {
+  .main-nav {
+    margin-right: 1px;
+  }
 }
 
 /* Hamburger */
@@ -232,6 +244,38 @@ header .container {
   margin-bottom: 60px;
 }
 
+@media screen and (max-width: 320px) {
+  .slider .slider-card:nth-child(4),
+  .slider .slider-card:nth-child(5),
+  .slider .slider-card:nth-child(6),
+  .slider .slider-card:nth-child(7),
+  .slider .slider-card:nth-child(8) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slide-wrapper .slider {
+    margin-bottom: 40px;
+  }
+
+  .slider .slider-card:nth-child(7),
+  .slider .slider-card:nth-child(8) {
+    display: none;
+  }
+
+  .slide-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .slide-wrapper .slider {
+    margin-bottom: 43px;
+  }
+}
+
 .our-friends {
   background-color: var(--color-light-l);
   padding-top: 120px;
@@ -250,19 +294,42 @@ header .container {
   left: 2px;
 }
 
+@media screen and (max-width: 768px) {
+  .our-friends .our-friends-subheading {
+    margin: 80px auto 30px;
+  }
+}
+
 .our-friends .slider .slider-card {
   width: 100%;
   background-color: var(--color-light-s);
   text-align: center;
   cursor: pointer;
 }
+
 .our-friends .slider .slider-card:hover {
   background-color: var(--color-light-xl);
+}
+
+@media screen and (max-width: 768px) {
+  .our-friends .slider .slider-card {
+    width: 270px;
+  }
 }
 
 .our-friends .pet-image {
   margin-bottom: 25px;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .our-friends .slider .slider-card {
+    width: 270px;
+  }
+
+  .our-friends .pet-image {
+    width: 270px;
+  }
 }
 
 .our-friends .pet-name {
@@ -304,6 +371,18 @@ header .container {
   display: flex;
   gap: 20px;
   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    margin-bottom: 77px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .pagination {
+    margin-bottom: 43px;
+  }
 }
 
 .pagination .btn-page {
@@ -364,6 +443,12 @@ footer .footer-subheading-1 {
 
 footer .footer-subheading-2 {
   margin-bottom: 31px;
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer-subheading-2 {
+    margin-bottom: 32px;
+  }
 }
 
 .contact-wrapper {
@@ -433,6 +518,20 @@ footer a:active {
   top: -5px;
 }
 
+@media screen and (max-width: 768px) {
+  .contact-1 img,
+  .contact-2 img {
+    margin-right: -1px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contact-1 img,
+  .contact-2 img {
+    margin-right: 0;
+  }
+}
+
 .office-location-1 img {
   align-self: center;
   position: relative;
@@ -444,6 +543,18 @@ footer a:active {
   top: -5px;
   left: -1px;
 }
+
+@media screen and (max-width: 320px) {
+  .office-location-1 img {
+    left: 0px;
+    top: -1px;
+  }
+  .office-location-2 img {
+    top: -4px;
+    left: 0;
+  }
+}
+
 /* End of Footer */
 
 /* Media queries */
@@ -507,6 +618,28 @@ footer a:active {
     margin-bottom: 33px;
   }
 
+  @media screen and (max-width: 768px) {
+    footer .container .contacts .footer-subheading-1 {
+      margin-bottom: 45px;
+    }
+
+    .contacts .contact-1 {
+      margin-bottom: 47px;
+    }
+
+    .address-wrapper {
+      margin-left: -1px;
+      margin-bottom: 38px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .address-wrapper {
+      margin-left: 5px;
+      margin-bottom: 43px;
+    }
+  }
+
   .slide-wrapper .slider {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 40px;
@@ -520,8 +653,21 @@ footer a:active {
     justify-items: center;
   }
 
+  @media screen and (max-width: 768px) {
+    .footer .container {
+      row-gap: 60px;
+    }
+  }
+
   footer .footer-dog-image {
     grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer .container {
+    padding: 0 64px;
+    padding-top: 30px;
   }
 }
 
@@ -603,9 +749,27 @@ footer a:active {
     width: 260px;
   }
 
+  @media screen and (max-width: 320px) {
+    .footer-dog-image {
+      margin-top: 6px;
+    }
+  }
+
   .footer .contacts {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .our-friends .our-friends-subheading {
+    margin-left: 6px;
+    line-height: 2rem;
+  }
+
+  .footer .footer-subheading-2 {
+    margin-top: 5px;
+    margin-left: 27px;
   }
 }
