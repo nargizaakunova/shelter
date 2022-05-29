@@ -507,7 +507,6 @@ header .container {
 }
 
 .footer .container {
-  display: flex;
   display: grid;
   column-gap: 160px;
   padding-top: 40px;
