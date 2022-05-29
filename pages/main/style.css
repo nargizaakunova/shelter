@@ -590,7 +590,7 @@ header .container {
   height: 459px;
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 992px) {
   .donation {
     height: 783px;
   }
@@ -615,7 +615,7 @@ header .container {
   margin-top: 9px;
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 992px) {
   .donation .donation-wrapper {
     flex-direction: column-reverse;
     align-items: center;
