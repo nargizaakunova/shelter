@@ -155,7 +155,7 @@ header .container {
     position: absolute;
     top: 49px;
     right: 53px;
-    z-index: 2;
+    z-index: 5;
   }
 
   .hamburger::before,
@@ -192,6 +192,7 @@ header .container {
 
   .sidebar-menu.open-menu {
     right: 0;
+    z-index: 3;
   }
 
   .sidebar-nav ul {
