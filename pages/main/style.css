@@ -165,6 +165,8 @@ header .container {
     top: 19px;
     right: 53px;
     z-index: 5;
+    transition: transform 0.5s;
+    cursor: pointer;
   }
 
   .hamburger::before,
