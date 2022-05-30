@@ -21,6 +21,6 @@ document.querySelector(".hamburger").addEventListener("click", function (e) {
 // Close sidebar when clicking out of the links
 
 document.addEventListener("click", function () {
-  document.querySelector(".hamburger").classList.toggle("open");
-  document.querySelector(".sidebar-menu").classList.toggle("open-menu");
+  document.querySelector(".hamburger").classList.remove("open");
+  document.querySelector(".sidebar-menu").classList.remove("open-menu");
 });
