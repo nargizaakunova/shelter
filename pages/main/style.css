@@ -397,6 +397,9 @@ div.background-image {
   box-sizing: border-box;
   margin-bottom: 62px;
   background-color: var(--color-light-l);
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .our-friends .slide-wrapper .arrow-left-btn:hover,

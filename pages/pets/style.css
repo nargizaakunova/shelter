@@ -392,6 +392,9 @@ header .container {
   width: 52px;
   height: 52px;
   border-radius: 100px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .pagination .to-start,
