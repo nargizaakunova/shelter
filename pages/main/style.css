@@ -372,10 +372,13 @@ div.background-image {
 }
 
 .our-friends .slide-wrapper .slider {
+  --slider-count: 3;
   display: flex;
   flex-direction: row;
   gap: 90px;
   margin-bottom: 60px;
+  overflow: hidden;
+  width: calc(270px * var(--slider-count) + 90px * (var(--slider-count) - 1));
 }
 
 .our-friends .slider .slider-card {

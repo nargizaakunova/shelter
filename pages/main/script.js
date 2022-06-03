@@ -24,3 +24,30 @@ document.addEventListener("click", function () {
   document.querySelector(".hamburger").classList.remove("open");
   document.querySelector(".sidebar-menu").classList.remove("open-menu");
 });
+
+let page = 0;
+
+// Carousel
+function slideTo(page) {
+  document.querySelector(".slider").scrollTo({
+    left: page * 3 * (270 + 90),
+    behavior: "smooth",
+  });
+}
+const btnLeftEl = document.querySelector(".arrow-left-btn");
+btnLeftEl.addEventListener("click", function (e) {
+  page--;
+  slideTo(page);
+});
+
+const btnRightEl = document.querySelector(".arrow-right-btn");
+btnRightEl.addEventListener("click", function (e) {
+  page++;
+  slideTo(page);
+});
+
+// Dark overlay when opening modal windows and nav-sidebar
+
+// Modal windows
+
+// Pagination
