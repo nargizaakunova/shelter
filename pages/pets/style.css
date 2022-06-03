@@ -19,6 +19,10 @@
   --secondary-font: "Arial", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
