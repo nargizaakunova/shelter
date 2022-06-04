@@ -55,6 +55,11 @@ function createSliderCard(pet) {
   // },
   const sliderCardEl = document.createElement("div");
   sliderCardEl.classList.add("slider-card");
+  sliderCardEl.onclick = () => {
+    console.log("open");
+    openModalWindow(pet);
+    showOverlay();
+  };
 
   const imgEl = document.createElement("img");
   imgEl.classList.add("pet-image");
@@ -67,11 +72,6 @@ function createSliderCard(pet) {
   const learnMoreBtnEl = document.createElement("button");
   learnMoreBtnEl.classList.add("learn-more-btn");
   learnMoreBtnEl.innerText = "Learn more";
-  learnMoreBtnEl.onclick = () => {
-    console.log("open");
-    openModalWindow(pet);
-    showOverlay();
-  };
 
   sliderCardEl.append(imgEl, petNameEl, learnMoreBtnEl);
 
