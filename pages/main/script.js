@@ -102,7 +102,8 @@ function hideOverlay() {
 }
 
 function openMenu() {
-  this.classList.toggle("open");
+  const hamburgerBtnEl = document.querySelector(".hamburger");
+  hamburgerBtnEl.classList.toggle("open");
   document.querySelector(".sidebar-menu").classList.toggle("open-menu");
 }
 
