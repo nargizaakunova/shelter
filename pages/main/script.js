@@ -21,25 +21,61 @@ document.querySelector(".hamburger").addEventListener("click", function (e) {
 });
 
 let page = 0;
+let pets = [];
+let sliderCount = 3;
+let gap = 90;
+
+function calcGapAndSliderCount() {
+  if (window.innerWidth < 1280 && window.innerWidth >= 821) {
+    gap = 60;
+    sliderCount = 2;
+  }
+  if (window.innerWidth < 821 && window.innerWidth >= 768) {
+    gap = 40;
+    sliderCount = 2;
+  }
+  if (window.innerWidth < 768 && window.innerWidth >= 300) {
+    gap = 0;
+    sliderCount = 1;
+  }
+}
 
 // Carousel
 function slideTo(page) {
+  // window width for carousel
+  calcGapAndSliderCount();
+
   document.querySelector(".slider").scrollTo({
-    left: page * 3 * (270 + 90),
+    left: page * sliderCount * (270 + gap),
     behavior: "smooth",
   });
 }
+
 const btnLeftEl = document.querySelector(".arrow-left-btn");
 btnLeftEl.addEventListener("click", function (e) {
-  page--;
+  const pagesCount = Math.ceil(pets.length / sliderCount);
+  if (page === 0) {
+    page = pagesCount - 1;
+  } else {
+    page--;
+  }
   slideTo(page);
 });
 
 const btnRightEl = document.querySelector(".arrow-right-btn");
 btnRightEl.addEventListener("click", function (e) {
-  page++;
+  const pagesCount = Math.ceil(pets.length / sliderCount);
+  if (page + 1 === pagesCount) {
+    page = 0;
+  } else {
+    page++;
+  }
   slideTo(page);
 });
+
+window.onresize = () => {
+  slideTo(page);
+};
 ///////////////
 function createSliderCard(pet) {
   // {
@@ -189,13 +225,15 @@ function closeModalWindow() {
 
 fetch("../../assets/pets.json")
   .then((response) => response.json())
-  .then((pets) => {
+  .then((items) => {
+    pets = items;
     const fragment = new DocumentFragment();
 
-    pets.forEach((pet) => {
+    items.forEach((pet) => {
       const sliderCard = createSliderCard(pet);
       fragment.append(sliderCard);
     });
+
     const sliderEl = document.getElementsByClassName("slider");
     if (sliderEl.length > 0) {
       sliderEl[0].append(fragment);
