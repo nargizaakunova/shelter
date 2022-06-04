@@ -879,7 +879,7 @@ footer a:active {
   font-weight: 400;
   font-size: 15px;
   line-height: 110%;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   color: #000000;
   margin: 0;
   padding-left: 0px;
@@ -890,11 +890,17 @@ footer a:active {
   margin-bottom: 11px;
 }
 
+.modal .pet-list > li span {
+  display: inline-block;
+  margin-left: 14px;
+}
+
 .modal .pet-list > li::before {
   content: "•";
   color: #f1cdb3;
   display: inline-block;
   width: 0.6em;
+  position: absolute;
 }
 
 /* 768px */
@@ -926,7 +932,7 @@ footer a:active {
     line-height: 110%;
   }
   .modal .pet-list {
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     margin-top: -2px;
   }
   .modal .pet-list > li {
