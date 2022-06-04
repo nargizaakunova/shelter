@@ -40,7 +40,7 @@ btnRightEl.addEventListener("click", function (e) {
   page++;
   slideTo(page);
 });
-
+///////////////
 function createSliderCard(pet) {
   // {
   //   "name": "Jennifer",
@@ -94,7 +94,7 @@ function showOverlay() {
 
 function hideOverlay() {
   const overlayEl = document.querySelector(".overlay");
-  console.log(overlayEl);
+  // console.log(overlayEl);
   if (overlayEl) {
     overlayEl.remove();
   }
@@ -183,7 +183,6 @@ function closeModalWindow() {
     modalWindowEl.remove();
   }
 }
-// Pagination
 
 // Fetch json file
 

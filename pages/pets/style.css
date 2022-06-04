@@ -800,3 +800,173 @@ footer a:active {
     margin-left: 27px;
   }
 }
+
+/* Modal windows start here */
+/* 1280px and + */
+.modal {
+  width: 900px;
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+}
+.modal-body {
+  display: flex;
+  gap: 30px;
+  background: #fafafa;
+  border-radius: 9px;
+}
+
+.modal .pet-image {
+  width: 500px;
+}
+
+.modal .pet-character {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.modal .close-modal-btn {
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 300ms;
+}
+.modal .close-modal-btn:hover {
+  background-color: #f1cdb3;
+}
+
+.modal .pet-name,
+.modal .pet-breed,
+.modal .pet-description {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.modal .pet-name {
+  font-size: 35px;
+  line-height: 130%;
+  margin-bottom: 10px;
+  margin-top: 51px;
+}
+
+.modal .pet-breed {
+  font-size: 20px;
+  line-height: 115%;
+  margin: 0;
+}
+
+.modal .pet-description {
+  font-size: 15px;
+  line-height: 114%;
+  width: 350px;
+  margin: 0;
+}
+
+.modal .pet-list {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.12em;
+  color: #000000;
+  margin: 0;
+  padding-left: 0px;
+  list-style: none;
+}
+
+.modal .pet-list > li {
+  margin-bottom: 11px;
+}
+
+.modal .pet-list > li::before {
+  content: "•";
+  color: #f1cdb3;
+  display: inline-block;
+  width: 0.6em;
+}
+
+/* 768px */
+
+@media (max-width: 1100px) {
+  .modal {
+    width: 630px;
+  }
+
+  .modal-body {
+    gap: 11px;
+  }
+
+  .modal .pet-image {
+    width: 350px;
+    height: 350px;
+  }
+
+  .modal .pet-character {
+    gap: 20px;
+  }
+
+  .modal .pet-name {
+    margin-top: 10px;
+  }
+  .modal .pet-description {
+    width: 261px;
+    font-size: 13px;
+    line-height: 110%;
+  }
+  .modal .pet-list {
+    letter-spacing: 0.1em;
+    margin-top: -2px;
+  }
+  .modal .pet-list > li {
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 750px) {
+  .modal {
+    width: 240px;
+    height: 341px;
+  }
+  .modal-body {
+    gap: 0;
+    padding: 10px;
+  }
+  .modal .pet-image {
+    display: none;
+  }
+  .modal .pet-name {
+    margin-top: 0;
+    margin-left: 5px;
+  }
+  .modal .pet-name,
+  .modal .pet-breed {
+    text-align: center;
+  }
+  .modal .pet-description {
+    width: 220px;
+    text-align: justify;
+    line-height: 108%;
+  }
+  .modal .pet-list {
+    letter-spacing: 0.06em;
+    margin-top: 3px;
+    margin-left: 2px;
+  }
+  .modal .close-modal-btn {
+    right: -30px;
+  }
+}
+
+/* Modal windows end here */
