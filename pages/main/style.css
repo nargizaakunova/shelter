@@ -1253,13 +1253,15 @@ footer a:active {
 /* 1280px and + */
 .modal {
   width: 900px;
-  margin: auto;
-  position: relative;
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
 }
 .modal-body {
   display: flex;
   gap: 30px;
-  transform: translateY(20%);
   background: #fafafa;
   border-radius: 9px;
 }
@@ -1276,7 +1278,7 @@ footer a:active {
 
 .modal .close-modal-btn {
   position: absolute;
-  top: 50px;
+  top: -52px;
   right: -42px;
   border: 2px solid #f1cdb3;
   border-radius: 100px;
@@ -1352,7 +1354,6 @@ footer a:active {
 
   .modal-body {
     gap: 11px;
-    transform: translateY(50%);
   }
 
   .modal .pet-image {
@@ -1362,10 +1363,6 @@ footer a:active {
 
   .modal .pet-character {
     gap: 20px;
-  }
-  .modal .close-modal-btn {
-    top: calc(19px + 30%);
-    right: -43px;
   }
 
   .modal .pet-name {
@@ -1416,8 +1413,7 @@ footer a:active {
     margin-left: 2px;
   }
   .modal .close-modal-btn {
-    top: calc(17px + 30%);
-    right: -31px;
+    right: -30px;
   }
 }
 
