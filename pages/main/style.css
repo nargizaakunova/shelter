@@ -94,6 +94,7 @@ header .container {
   justify-content: center;
   text-decoration: none;
   gap: 10px;
+  width: 186px;
 }
 
 .logo .logo-title {
