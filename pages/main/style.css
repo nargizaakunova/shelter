@@ -386,6 +386,7 @@ div.background-image {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  min-height: 494px;
 }
 
 .our-friends .slide-wrapper .slider {
