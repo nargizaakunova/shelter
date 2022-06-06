@@ -10,7 +10,7 @@ document.querySelector(".hamburger").addEventListener("click", function (e) {
   }
   e.stopPropagation();
 });
-////////
+
 function createSliderCard(pet) {
   const sliderCardEl = document.createElement("div");
   sliderCardEl.classList.add("slider-card");
@@ -150,6 +150,51 @@ function closeModalWindow() {
   if (modalWindowEl) {
     modalWindowEl.remove();
   }
+}
+
+let page = 0;
+
+// Pagination
+function createPagination(page) {
+  const paginationEl = document.createElement("div");
+  paginationEl.classList.add("pagination");
+
+  const btnStartEl = document.createElement("button");
+  btnStartEl.classList.add("btn-page", "to-start", "btn-page-styler");
+  btnStartEl.innerText = "&lt;&lt;";
+  btnStartEl.onclick = () => {};
+
+  const btnPrevEl = document.createElement("button");
+  btnPrevEl.classList.add("btn-page", "back", "btn-page-styler");
+  btnPrevEl.innerText = "&lt;";
+  btnPrevEl.onclick = () => {};
+
+  const btnCurrentPageEl = document.createElement("button");
+  btnCurrentPageEl.classList.add("btn-page", "current", "btn-page-styler");
+  btnCurrentPageEl.innerText = page + 1;
+
+  const btnNextEl = document.createElement("button");
+  btnNextEl.classList.add("btn-page", "next", "btn-page-styler");
+  btnNextEl.innerText = "&gt;";
+  btnNextEl.onclick = () => {};
+
+  const btnEndEl = document.createElement("button");
+  btnEndEl.classList.add("btn-page", "to-end", "btn-page-styler");
+  btnEndEl.innerText = "&gt;&gt;";
+  btnEndEl.onclick = () => {};
+
+  paginationEl.append(
+    btnStartEl,
+    btnPrevEl,
+    btnCurrentPageEl,
+    btnNextEl,
+    btnEndEl
+  );
+  return paginationEl;
+}
+
+function showPagination() {
+  document.querySelector(".slider").after(createPagination(page));
 }
 
 // Fetch json file
