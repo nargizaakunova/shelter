@@ -21,11 +21,16 @@ document.querySelector(".hamburger").addEventListener("click", function (e) {
 });
 
 let page = 0;
+let pageOffset = 0;
 let pets = [];
 let sliderCount = 3;
 let gap = 90;
 
 function calcGapAndSliderCount() {
+  if (window.innerWidth >= 1280) {
+    gap = 90;
+    sliderCount = 3;
+  }
   if (window.innerWidth < 1280 && window.innerWidth >= 821) {
     gap = 60;
     sliderCount = 2;
@@ -51,29 +56,107 @@ function slideTo(page) {
   });
 }
 
+function generatePets(pets) {
+  let result = [];
+  calcItemsPerPageAndRow();
+
+  if (currentPage > pagesCount) {
+    currentPage = 1;
+  }
+
+  let startFrom = 0;
+  for (let i = 0; i < pagesCount; i++) {
+    /*
+    [1.2.3.4.5.6.7.8]
+    0 [123] 
+    3 [456]
+    6 [781] // 9
+    1 [234]
+    */
+    result.push(...shuffleArray(getSlice(pets, itemsPerPage, startFrom)));
+    startFrom = startFrom + itemsPerPage;
+    if (startFrom > pets.length - 1) {
+      startFrom = startFrom - pets.length;
+    }
+  }
+  generatedPets = result;
+}
+
+function getSlice(items, sliceCount, startFrom) {
+  let result = [];
+  if (startFrom + sliceCount > items.length) {
+    result.push(...items.slice(startFrom));
+    // 12345678
+    result.push(...items.slice(0, startFrom + sliceCount - items.length));
+  } else {
+    result.push(...items.slice(startFrom, sliceCount + startFrom));
+  }
+  return result;
+}
+
+function shuffleArray(array) {
+  let currentIndex = array.length,
+    randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
 const btnLeftEl = document.querySelector(".arrow-left-btn");
 btnLeftEl.addEventListener("click", function (e) {
-  const pagesCount = Math.ceil(pets.length / sliderCount);
-  if (page === 0) {
-    page = pagesCount - 1;
+  page--;
+  pageOffset--;
+
+  if (page < 0) {
+    page = 0;
+
+    let startFrom = pets.length - Math.abs(pageOffset) * sliderCount;
+    if (startFrom < 0) {
+      startFrom = pets.length - (Math.abs(startFrom) % pets.length);
+    }
+
+    const items = shuffleArray(getSlice(pets, sliderCount, startFrom));
+    addItemsToSlider(items, true);
+
+    document.querySelector(".slider").scrollTo({
+      left: (page + 1) * sliderCount * (270 + gap),
+    });
+
+    setTimeout(() => {
+      slideTo(page);
+    }, 100);
   } else {
-    page--;
+    slideTo(page);
   }
-  slideTo(page);
 });
 
 const btnRightEl = document.querySelector(".arrow-right-btn");
 btnRightEl.addEventListener("click", function (e) {
-  const pagesCount = Math.ceil(pets.length / sliderCount);
-  if (page + 1 === pagesCount) {
-    page = 0;
-  } else {
-    page++;
-  }
-  slideTo(page);
+  page++;
+  pageOffset++;
+
+  let startFrom =
+    page * sliderCount > pets.length
+      ? (page * sliderCount) % pets.length
+      : page * sliderCount;
+  const items = shuffleArray(getSlice(pets, sliderCount, startFrom));
+  addItemsToSlider(items);
+
+  setTimeout(() => {
+    slideTo(page);
+  }, 100);
 });
 
 window.onresize = () => {
+  page = 0;
+  renderInitialSlides(pets);
   slideTo(page);
 };
 ///////////////
@@ -226,16 +309,38 @@ function closeModalWindow() {
 fetch("../../assets/pets.json")
   .then((response) => response.json())
   .then((items) => {
-    pets = items;
-    const fragment = new DocumentFragment();
+    pets = shuffleArray(items);
 
-    items.forEach((pet) => {
-      const sliderCard = createSliderCard(pet);
-      fragment.append(sliderCard);
-    });
+    renderInitialSlides(pets);
+  });
 
-    const sliderEl = document.getElementsByClassName("slider");
-    if (sliderEl.length > 0) {
+function renderInitialSlides(pets) {
+  // sliderCount
+  calcGapAndSliderCount();
+
+  const items = shuffleArray(getSlice(pets, sliderCount, page));
+  addItemsToSlider(items, false, true);
+}
+
+function addItemsToSlider(items, toBeginning, replace) {
+  const fragment = new DocumentFragment();
+
+  items.forEach((pet) => {
+    const sliderCard = createSliderCard(pet);
+    fragment.append(sliderCard);
+  });
+
+  const sliderEl = document.getElementsByClassName("slider");
+
+  if (sliderEl.length > 0) {
+    if (replace) {
+      sliderEl[0].innerHTML = "";
+    }
+
+    if (toBeginning) {
+      sliderEl[0].prepend(fragment);
+    } else {
       sliderEl[0].append(fragment);
     }
-  });
+  }
+}
