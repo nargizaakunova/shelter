@@ -269,24 +269,9 @@ header .container {
   margin-bottom: 60px;
 }
 
-@media screen and (max-width: 320px) {
-  .slider .slider-card:nth-child(4),
-  .slider .slider-card:nth-child(5),
-  .slider .slider-card:nth-child(6),
-  .slider .slider-card:nth-child(7),
-  .slider .slider-card:nth-child(8) {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .slide-wrapper .slider {
     margin-bottom: 40px;
-  }
-
-  .slider .slider-card:nth-child(7),
-  .slider .slider-card:nth-child(8) {
-    display: none;
   }
 
   .slide-wrapper {
@@ -419,8 +404,18 @@ header .container {
   align-items: center;
 }
 
-.pagination .to-start,
-.pagination .back {
+.pagination .btn-page:not(:disabled) {
+  border: 2px solid #f1cdb3;
+  color: var(--color-dark-3xl);
+  background-color: transparent;
+  cursor: pointer;
+}
+.pagination .btn-page:not(:disabled):hover {
+  background-color: var(--color-primary-light);
+  border: none;
+}
+
+.pagination .btn-page:disabled {
   border: 2px solid #cdcdcd;
   color: var(--color-dark-s);
   background-color: transparent;
@@ -429,21 +424,8 @@ header .container {
 .pagination .current {
   border: none;
   color: var(--color-dark-3xl);
-  background-color: var(--color-primary);
-}
-
-.pagination .next,
-.pagination .to-end {
-  border: 2px solid #f1cdb3;
-  color: var(--color-dark-3xl);
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.pagination .next:hover,
-.pagination .to-end:hover {
-  background-color: var(--color-primary-light);
-  border: none;
+  background-color: var(--color-primary) !important;
+  cursor: default !important;
 }
 
 /* End of Our Friends Looking For a House Section */

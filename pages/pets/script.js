@@ -152,36 +152,100 @@ function closeModalWindow() {
   }
 }
 
-let page = 0;
+let pets = [];
+let generatedPets = [];
+
+let itemsPerPage = 8;
+let currentPage = 1;
+let pagesCount = 1;
+
+function calcItemsPerPageAndRow() {
+  if (window.innerWidth >= 1280) {
+    itemsPerPage = 8;
+  } else if (window.innerWidth >= 768) {
+    itemsPerPage = 6;
+  } else {
+    itemsPerPage = 3;
+  }
+  pagesCount = 48 / itemsPerPage;
+}
 
 // Pagination
-function createPagination(page) {
+function createPagination(pagesCount) {
   const paginationEl = document.createElement("div");
   paginationEl.classList.add("pagination");
 
   const btnStartEl = document.createElement("button");
   btnStartEl.classList.add("btn-page", "to-start", "btn-page-styler");
-  btnStartEl.innerText = "&lt;&lt;";
-  btnStartEl.onclick = () => {};
+  btnStartEl.innerHTML = "&lt;&lt;";
+  btnStartEl.disabled = currentPage === 1;
+  btnStartEl.onclick = () => {
+    currentPage = 1;
+    btnCurrentPageEl.innerText = currentPage;
+
+    btnPrevEl.disabled = true;
+    btnStartEl.disabled = true;
+
+    btnNextEl.disabled = false;
+    btnEndEl.disabled = false;
+
+    renderCurrentPage();
+  };
 
   const btnPrevEl = document.createElement("button");
   btnPrevEl.classList.add("btn-page", "back", "btn-page-styler");
-  btnPrevEl.innerText = "&lt;";
-  btnPrevEl.onclick = () => {};
+  btnPrevEl.innerHTML = "&lt;";
+  btnPrevEl.disabled = currentPage === 1;
+  btnPrevEl.onclick = () => {
+    btnCurrentPageEl.innerText = --currentPage;
+
+    if (currentPage === 1) {
+      btnPrevEl.disabled = true;
+      btnStartEl.disabled = true;
+    }
+    btnNextEl.disabled = false;
+    btnEndEl.disabled = false;
+
+    renderCurrentPage();
+  };
 
   const btnCurrentPageEl = document.createElement("button");
   btnCurrentPageEl.classList.add("btn-page", "current", "btn-page-styler");
-  btnCurrentPageEl.innerText = page + 1;
+  btnCurrentPageEl.innerText = currentPage;
 
   const btnNextEl = document.createElement("button");
   btnNextEl.classList.add("btn-page", "next", "btn-page-styler");
-  btnNextEl.innerText = "&gt;";
-  btnNextEl.onclick = () => {};
+  btnNextEl.innerHTML = "&gt;";
+  btnNextEl.disabled = currentPage === pagesCount;
+  btnNextEl.onclick = () => {
+    btnCurrentPageEl.innerText = ++currentPage;
+
+    if (currentPage === pagesCount) {
+      btnNextEl.disabled = true;
+      btnEndEl.disabled = true;
+    }
+    btnPrevEl.disabled = false;
+    btnStartEl.disabled = false;
+
+    renderCurrentPage();
+  };
 
   const btnEndEl = document.createElement("button");
   btnEndEl.classList.add("btn-page", "to-end", "btn-page-styler");
-  btnEndEl.innerText = "&gt;&gt;";
-  btnEndEl.onclick = () => {};
+  btnEndEl.innerHTML = "&gt;&gt;";
+  btnEndEl.disabled = currentPage === pagesCount;
+  btnEndEl.onclick = () => {
+    currentPage = pagesCount;
+    btnCurrentPageEl.innerText = currentPage;
+
+    btnPrevEl.disabled = false;
+    btnStartEl.disabled = false;
+
+    btnNextEl.disabled = true;
+    btnEndEl.disabled = true;
+
+    renderCurrentPage();
+  };
 
   paginationEl.append(
     btnStartEl,
@@ -194,22 +258,104 @@ function createPagination(page) {
 }
 
 function showPagination() {
-  document.querySelector(".slider").after(createPagination(page));
+  const paginationEl = document.querySelector(".pagination");
+  if (paginationEl) {
+    paginationEl.remove();
+  }
+  document
+    .querySelector(".slide-wrapper")
+    .appendChild(createPagination(pagesCount));
+}
+function renderPets(items) {
+  const fragment = new DocumentFragment();
+
+  items.forEach((pet) => {
+    const sliderCard = createSliderCard(pet);
+    fragment.append(sliderCard);
+  });
+  const sliderEl = document.getElementsByClassName("slider");
+  if (sliderEl.length > 0) {
+    sliderEl[0].replaceChildren(fragment);
+  }
+}
+
+function generatePets(pets) {
+  let result = [];
+  calcItemsPerPageAndRow();
+
+  if (currentPage > pagesCount) {
+    currentPage = 1;
+  }
+
+  let startFrom = 0;
+  for (let i = 0; i < pagesCount; i++) {
+    /*
+    [1.2.3.4.5.6.7.8]
+    0 [123] 
+    3 [456]
+    6 [781] // 9
+    1 [234]
+    */
+    result.push(...shuffleArray(getSlice(pets, itemsPerPage, startFrom)));
+    startFrom = startFrom + itemsPerPage;
+    if (startFrom > pets.length - 1) {
+      startFrom = startFrom - pets.length;
+    }
+  }
+  generatedPets = result;
+}
+
+function getSlice(items, sliceCount, startFrom) {
+  let result = [];
+  if (startFrom + sliceCount > items.length) {
+    result.push(...items.slice(startFrom));
+    // 12345678
+    result.push(...items.slice(0, startFrom + sliceCount - items.length));
+  } else {
+    result.push(...items.slice(startFrom, sliceCount + startFrom));
+  }
+  return result;
+}
+
+function shuffleArray(array) {
+  let currentIndex = array.length,
+    randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
+function renderCurrentPage() {
+  // [] 48
+  // currentPage 1
+  // itemsPerPage 8
+  // 48 [0...7] === currentPage 1
+  // 48 [8...15] === currentPage 2
+  const offset = (currentPage - 1) * itemsPerPage;
+  const chunk = generatedPets.slice(offset, offset + itemsPerPage);
+  renderPets(chunk);
 }
 
 // Fetch json file
 
 fetch("../../assets/pets.json")
   .then((response) => response.json())
-  .then((pets) => {
-    const fragment = new DocumentFragment();
-
-    pets.forEach((pet) => {
-      const sliderCard = createSliderCard(pet);
-      fragment.append(sliderCard);
-    });
-    const sliderEl = document.getElementsByClassName("slider");
-    if (sliderEl.length > 0) {
-      sliderEl[0].append(fragment);
-    }
+  .then((items) => {
+    pets = shuffleArray(items);
+    generatePets(pets);
+    renderCurrentPage();
+    showPagination();
   });
+
+window.onresize = () => {
+  generatePets(pets);
+  renderCurrentPage();
+  showPagination();
+};
