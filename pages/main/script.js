@@ -20,6 +20,14 @@ document.querySelector(".hamburger").addEventListener("click", function (e) {
   e.stopPropagation();
 });
 
+const menuLinksEl = document.querySelectorAll(".sidebar-nav a");
+for (let menuLinkEl of menuLinksEl) {
+  menuLinkEl.onclick = () => {
+    hideMenu();
+    hideOverlay();
+  };
+}
+
 let page = 0;
 let pageOffset = 0;
 let pets = [];

@@ -11,6 +11,14 @@ document.querySelector(".hamburger").addEventListener("click", function (e) {
   e.stopPropagation();
 });
 
+const menuLinksEl = document.querySelectorAll(".sidebar-nav a");
+for (let menuLinkEl of menuLinksEl) {
+  menuLinkEl.onclick = () => {
+    hideMenu();
+    hideOverlay();
+  };
+}
+
 function createSliderCard(pet) {
   const sliderCardEl = document.createElement("div");
   sliderCardEl.classList.add("slider-card");
