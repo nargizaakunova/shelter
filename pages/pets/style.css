@@ -166,7 +166,7 @@ header .container {
 }
 
 /* Hamburger */
-@media (max-width: 749px) {
+@media (max-width: 767px) {
   .hamburger {
     width: 30px;
     height: 22px;
@@ -246,7 +246,7 @@ header .container {
   }
 }
 
-@media (min-width: 749px) {
+@media (min-width: 768px) {
   .hamburger {
     display: none;
   }
@@ -681,7 +681,7 @@ footer a:active {
   }
 }
 
-@media (max-width: 748px) {
+@media (max-width: 767px) {
   header .container {
     padding: 0 10px;
   }
